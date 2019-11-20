@@ -23,18 +23,19 @@ import (
 	"path"
 	"time"
 
+	"syscall"
+
 	"github.com/golang/glog"
 	"github.com/kubernetes-incubator/external-storage/lib/controller"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/client-go/kubernetes"
-	"k8s.io/client-go/pkg/api/v1"
+	v1 "k8s.io/client-go/pkg/api/v1"
 	"k8s.io/client-go/rest"
-	"syscall"
 )
 
 const (
-	resyncPeriod              = 15 * time.Second
+	resyncPeriod              = 10 * time.Second
 	provisionerName           = "hostpath"
 	exponentialBackOffOnError = false
 	failedRetryThreshold      = 5
