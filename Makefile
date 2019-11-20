@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-IMAGE?=mazdermind/hostpath-provisioner
+IMAGE?=xor22h/hostpath-provisioner
 
 TAG_GIT=$(IMAGE):$(shell git rev-parse HEAD)
 TAG_LATEST=$(IMAGE):latest
 
-all: dependencies hostpath-provisioner image
+all: dependencies hostpath-provisioner image push
 
 image:
 	docker build -t $(TAG_GIT) -f Dockerfile.scratch .

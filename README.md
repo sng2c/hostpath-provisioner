@@ -1,16 +1,15 @@
 # Dynamic Provisioning of Kubernetes HostPath Volumes
-This Reposirory and Code is #Unmaintained. You should not use it in production.
 
 ## TL;DR
 ```bash
 # install dynamic hostpath provisioner
-kubectl create -f https://raw.githubusercontent.com/MaZderMind/hostpath-provisioner/master/manifests/rbac.yaml
-kubectl create -f https://raw.githubusercontent.com/MaZderMind/hostpath-provisioner/master/manifests/deployment.yaml
-kubectl create -f https://raw.githubusercontent.com/MaZderMind/hostpath-provisioner/master/manifests/storageclass.yaml
+kubectl create -f https://raw.githubusercontent.com/xor22h/hostpath-provisioner/master/manifests/rbac.yaml
+kubectl create -f https://raw.githubusercontent.com/xor22h/hostpath-provisioner/master/manifests/deployment.yaml
+kubectl create -f https://raw.githubusercontent.com/xor22h/hostpath-provisioner/master/manifests/storageclass.yaml
 
 # create a test-pvc and a pod writing to it
-kubectl create -f https://raw.githubusercontent.com/MaZderMind/hostpath-provisioner/master/manifests/test-claim.yaml
-kubectl create -f https://raw.githubusercontent.com/MaZderMind/hostpath-provisioner/master/manifests/test-pod.yaml
+kubectl create -f https://raw.githubusercontent.com/xor22h/hostpath-provisioner/master/manifests/test-claim.yaml
+kubectl create -f https://raw.githubusercontent.com/xor22h/hostpath-provisioner/master/manifests/test-pod.yaml
 
 # expect a file to exist on your host
 $ ls -la /var/kubernetes/default-hostpath-test-claim-pvc-*/
