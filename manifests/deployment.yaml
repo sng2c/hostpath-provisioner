@@ -22,7 +22,7 @@ spec:
           resources:
             limits:
               memory: 16Mi
-              cpu: 200mi
+              cpu: 200m
           env:
             - name: NODE_NAME
               valueFrom:
